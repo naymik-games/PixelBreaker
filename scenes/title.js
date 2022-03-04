@@ -66,7 +66,7 @@ class titleScreen extends Phaser.Scene {
       this.sound.play('click_sound');
      }
       
-      this.scene.start("selectGame");
+      this.scene.start("selectGroup");
     }, this);
 	this.settingsIcon.on('pointerdown', function(){
       if (soundOn) {

@@ -8,7 +8,7 @@ window.onload = function() {
       mode: Phaser.Scale.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH,
       parent: "thegame",
-      width: 850,
+      width: 900,
       height: 1650
     },
     physics: {
@@ -19,7 +19,7 @@ window.onload = function() {
     },
     pixelArt: true,
 
-    scene: [preloadGame, titleScreen, settings, selectGame, preview, playGame, UI, endLevel, levelEditor, levelEditorUI]
+    scene: [preloadGame, titleScreen, settings, selectGroup, selectGame, preview, playGame, UI, endLevel, levelEditor, levelEditorUI]
   }
   game = new Phaser.Game(gameConfig);
 
