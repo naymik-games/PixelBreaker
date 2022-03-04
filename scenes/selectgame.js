@@ -85,15 +85,15 @@ class selectGame extends Phaser.Scene {
       console.log('level');
       if (i < 8) {
         var xpos = 50
-        var ypos = (game.config.height / 2 - 525) + (i * 135);
+        var ypos = (game.config.height / 2 - 525) + (i * 140);
 
       } else {
         var xpos = 450
-        var ypos = (game.config.height / 2 - 525) + ((i - 8) * 135);
+        var ypos = (game.config.height / 2 - 525) + ((i - 8) * 140);
 
       }
       var tempLevel = i + 1;
-      var levelTitle = this.add.bitmapText(xpos, ypos - 20, 'topaz', '#' + tempLevel + ' - ' + levels[levelNum].title, 40).setOrigin(0, .5);
+      var levelTitle = this.add.bitmapText(xpos, ypos - 20, 'topaz', '#' + tempLevel + ' - ' + levels[levelNum].title, 34).setOrigin(0, .5);
       levelTitle.level = levelNum;
       var statusText;
 
@@ -120,7 +120,7 @@ class selectGame extends Phaser.Scene {
       }
 
 
-      statusText = this.add.bitmapText(xpos + 50, ypos + 50, 'topaz', status, 40).setOrigin(0, .5).setTint(0xd8a603);
+      statusText = this.add.bitmapText(xpos + 50, ypos + 50, 'topaz', status, 34).setOrigin(0, .5).setTint(0xd8a603);
 
 
 

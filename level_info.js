@@ -1,13 +1,13 @@
 let groups = [
-{group: 0, numLevels: 16, startNum: 0, title: 'The Basics'}, 
-{group: 1, numLevels: 16, startNum: 16, title: 'Tap to Drop'}, 
-{group: 2, numLevels: 16, startNum: 32, title: 'Tap to Spread'},
-{group: 3, numLevels: 16, startNum: 48, title: 'Swipe to Control'},
-{group: 4, numLevels: 16, startNum: 64, title: 'Extra Reach'},
-{group: 5, numLevels: 16, startNum: 80, title: 'Big Radius'},
-{group: 6, numLevels: 16, startNum: 96, title: 'Color Drain'},
-{group: 7, numLevels: 16, startNum: 112, title: 'The Basics'},
-{group: 8, numLevels: 10, startNum: 128, title: 'The Basics'},
+{group: 0, numLevels: 16, startNum: 0, title: '1 The Basics'}, 
+{group: 1, numLevels: 16, startNum: 16, title: '2 Tap to Drop'}, 
+{group: 2, numLevels: 16, startNum: 32, title: '3 Tap to Spread'},
+{group: 3, numLevels: 16, startNum: 48, title: '4 Swipe to Control'},
+{group: 4, numLevels: 16, startNum: 64, title: '5 Extra Reach'},
+{group: 5, numLevels: 16, startNum: 80, title: '6 Big Radius'},
+{group: 6, numLevels: 16, startNum: 96, title: '7 Color Drain'},
+{group: 7, numLevels: 16, startNum: 112, title: '8 The Basics'},
+{group: 8, numLevels: 16, startNum: 128, title: '9 The Basics'},
 
 
 ];
@@ -171,5 +171,10 @@ let levels = [
 {level: 135, bombTypes: [7,9,0,0,1,1,2,3,8], title: 'ATARI', bgColor: 0xC63939, groupNum: 22, size: 0},
 {level: 136, bombTypes: [6,0,3,3,2,2,1,1,3], title: 'LOCAMOTIVE', bgColor: 0x333f70, groupNum: 22, size: 1},
 {level: 137, bombTypes: [8,9,6,9,2,2,1,0,7], title: 'GLOBE', bgColor: 0xc4bbbb, groupNum: 22, size: 0},
-
+{level: 138, bombTypes: [2,2,0,1,1,3,6,7,9,7,1,0], title: 'RAIDERS', bgColor: 0x664323, groupNum: 23, size: 0},
+{level: 139, bombTypes: [7,7,7,2,2,8,8,8], title: 'REBEL', bgColor: 0x000000, groupNum: 23, size: 0},
+{level: 140, bombTypes: [1,1,0,2,6,6,3,2,8], title: 'ATARI CONTROLLER', bgColor: 0x355d92, groupNum: 23, size: 0},
+{level: 141, bombTypes: [6,6,2,1,1,2,7], title: 'WHEN PIGS FLY', bgColor: 0x78d0dd, groupNum: 23, size: 0},
+{level: 142, bombTypes: [0,6,1,2,3,2,1,2,9], title: 'SMALL CHOPPER', bgColor: 0x78d0dd, groupNum: 23, size: 0},
+{level: 143, bombTypes: [1,6,7,7,2,3,3,0,0,1,2,6,8], title: 'FIREPLACE', bgColor: 0xdedede, groupNum: 23, size: 0},
 ];
