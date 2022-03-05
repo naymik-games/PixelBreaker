@@ -8,7 +8,7 @@ let groups = [
 {group: 6, numLevels: 16, startNum: 96, title: '7 Color Drain'},
 {group: 7, numLevels: 16, startNum: 112, title: '8 The Basics'},
 {group: 8, numLevels: 16, startNum: 128, title: '9 The Basics'},
-
+{group: 9, numLevels: 16, startNum: 144, title: '10 The Basics'},
 
 ];
 //level data
@@ -41,7 +41,7 @@ let levels = [
 {level: 13, bombTypes: [2,2,2,0,0,1,1,1,0,2,8,8], title: 'OVER THE MOON', bgColor: 0x000000, groupNum: 2, size: 0},
 {level: 14, bombTypes: [1,2,1,2,0,0,1,2,8], title: 'GOOD BOY', bgColor: 0x000000, groupNum: 2, size: 0},
 {level: 15, bombTypes: [1,1,2,1,2,1,2,0,2,0,2,0,1,0,8,2,1,8], title: 'POTION', bgColor: 0xB4A263, groupNum: 2, size: 0},
-//group 2
+//group 1
 {level: 16, bombTypes: [2,2,0,1,1,2, 2, 0, 0,1,2,8,1,8], title: 'GROWING GROOT', bgColor: 0x000000, groupNum: 2, size: 0},
 {level: 17, bombTypes: [0,1,2,2,2,0,8,8,8, ], title: 'RANDOM DESIGN', bgColor: 0x000000, groupNum: 2, size: 0},
 {level: 18, bombTypes: [0,3,3,1,3,0,1,2,2,2,2,0,1,2,2,8,8,8], title: 'AT-AT', bgColor: 0xF2F2F2, groupNum: 3, size: 0},
@@ -58,7 +58,7 @@ let levels = [
 {level: 29, bombTypes: [6,6,3,0,2, 2, 0], title: 'COOL', bgColor: 0x456173, groupNum: 4, size: 0},
 {level: 30, bombTypes: [7,7,1,2, 2, 7, 7,3,6,6,7,0,0,1,3,6,6,3,8,2,8], title: 'FALCON', bgColor: 0x000000, groupNum: 5, size: 0},
 {level: 31, bombTypes: [2,7,7,1,2, 2, 7,3, 0,1,3,3,8], title: 'CALENDAR', bgColor: 0xECECEC, groupNum: 5, size: 0},
-//group 3
+//group 2
 {level: 32, bombTypes: [7,7,7,1,0,1,2,6,6,7,3,3,2,6,7,1,3, 0,8], title: 'BABY YODA', bgColor: 0x747B5E, groupNum: 5, size: 1},
 {level: 33, bombTypes: [7,0,1,2, 2, 7, 2,0,1,8,8,8], title: 'EARTH', bgColor: 0x000000, groupNum: 5, size: 0},
 {level: 34, bombTypes: [6,6,7,0,1,2,6, 2, 7, 0,2,6,1,8,8,8], title: 'BENDERS', bgColor: 0xf25f5f, groupNum: 5, size: 0},
@@ -75,7 +75,7 @@ let levels = [
 {level: 45, bombTypes: [7,0,9,6,7,7,1,2, 9,2,7,6,7,6,7, 6,2,6,1,7,9, 0,1], title: 'NASA', bgColor: 0x2757a9, groupNum: 7, size: 1},
 {level: 46, bombTypes: [7,9,0,9,7,7,1,2, 2, 7, 0,0,8], title: 'Dan', bgColor: 0x000000, groupNum: 7, size: 0},
 {level: 47, bombTypes: [6,0,7,7,1,9,2, 2, 1,6,7, 0,1], title: 'Gandolf', bgColor: 0x695d89, groupNum: 7, size: 0},
-//group 4
+//group 3
 {level: 48, bombTypes: [7,9,7,9,6,6,6,0,1,2,9,3, 2, 7, 0,1], title: 'Harley', bgColor: 0x794101, groupNum: 8, size: 2},
 {level: 49, bombTypes: [7,9,0,1,2, 0,], title: 'Go Brownies', bgColor: 0x237321, groupNum: 8, size: 0},
 {level: 50, bombTypes: [7,9,0,1,9,2, 7,6,2, 7, 0,1,8], title: 'Football', bgColor: 0x237321, groupNum: 8, size: 0},
@@ -92,7 +92,7 @@ let levels = [
 {level: 61, bombTypes: [0,8,9,3,3,2,2,8], title: 'Light Up', bgColor: 0x000000, groupNum: 10, size: 0},
 {level: 62, bombTypes: [6,6,3,3,7,0,0,2,2,1,2,9], title: 'RoboCop', bgColor: 0x746b94, groupNum: 10, size: 0},
 {level: 63, bombTypes: [2,9,1,1,3,3,2, 2, 0,1], title: 'Longing', bgColor: 0xdbdad7, groupNum: 10, size: 0},
-//group 5
+//group 4
 {level: 64, bombTypes: [0,9,0,7,1,2, 2, 7, 0,1], title: 'Indy', bgColor: 0xcfdb94, groupNum: 10, size: 0},
 {level: 65, bombTypes: [2,2,1,3,1,0,9,2,3,0,6,2,8], title: 'Samus', bgColor: 0x000000, groupNum: 10, size: 0},
 {level: 66, bombTypes: [2,7,0,2,3,9,0,7,8,2,1], title: 'Carbonite', bgColor: 0x968888, groupNum: 11, size: 0},
@@ -109,7 +109,7 @@ let levels = [
 {level: 77, bombTypes: [6,6,0,9,2,2,7,3,0,1], title: 'Hungry Hungry', bgColor: 0x000000, groupNum: 12, size: 0},
 {level: 78, bombTypes: [7,0,6,0,7,8,3,2,1], title: 'Leaf', bgColor: 0x4f709c, groupNum: 13, size: 0},
 {level: 79, bombTypes: [9,0,0,1,6,9,8,3,3], title: 'Jedi', bgColor: 0x2a2447, groupNum: 13, size: 0},
-//group 6
+//group 5
 {level: 80, bombTypes: [6,1,1,7,7,9,6,2,0,3,2,7,0,8,8], title: 'Work From Home', bgColor: 0x7da19d, groupNum: 13, size: 0},
 {level: 81, bombTypes: [7,2,2,3,1,1,2,2,2,8,9,1,1,0], title: 'Casio', bgColor: 0x99d9be, groupNum: 13, size: 0},
 {level: 82, bombTypes: [0,7,3,3,1,2,7,7,2,0,0,6,1,2], title: 'Hiker', bgColor: 0x65b5fb, groupNum: 13, size: 0},
@@ -126,7 +126,7 @@ let levels = [
 {level: 93, bombTypes: [2,2,3,1,1,2,2,2,8,0], title: 'McFly', bgColor: 0x2a2447, groupNum: 15, size: 0},
 {level: 94, bombTypes: [0,7,3,3,1,2,2], title: 'Headphones', bgColor: 0x000000, groupNum: 15, size: 0},
 {level: 95, bombTypes: [6,6,0,9,2,2,7,3,0,2,8,8,8], title: 'Cassette Tape', bgColor: 0xf5f5f5, groupNum: 15, size: 0},
-//group 7
+//group 6
 {level: 96, bombTypes: [7,0,0,7,8,2,7,1,2,1,2,1], title: 'Excel', bgColor: 0xf5f5f5, groupNum: 16, size: 0},
 {level: 97, bombTypes: [0,0,1,6,9,9,3,3], title: 'Kid Icarus', bgColor: 0x000000, groupNum: 16, size: 0},
 {level: 98, bombTypes: [6,1,1,7,7,9,6,2,3,2,7,7,1,9,0,9,0,8,8], title: 'iPod Classic', bgColor: 0x404040, groupNum: 16, size: 0},
@@ -143,7 +143,7 @@ let levels = [
 {level: 109, bombTypes: [0,0,1,6,9,9,3,3], title: 'Lincoln', bgColor: 0x000000, groupNum: 18, size: 0},
 {level: 110, bombTypes: [6,1,1,7,7,9,6,2,0,0,8,8], title: 'Excite Bike', bgColor: 0xc4c4c4, groupNum: 18, size: 0},
 {level: 111, bombTypes: [2,2,3,1,1,2,2,2,8,0], title: 'Storm Trooper', bgColor: 0xf5f5f5, groupNum: 18, size: 0},
-//group 8
+//group 7
 {level: 112, bombTypes: [0,7,3,3,1,2,2,7,7,6,1,3,2,0], title: 'Arcade', bgColor: 0xc4d98c, groupNum: 18, size: 0},
 {level: 113, bombTypes: [6,6,0,9,2,2,7,3,0,2,8,8,8], title: 'Catapult', bgColor: 0xb5c3d9, groupNum: 18, size: 1},
 {level: 114, bombTypes: [7,0,0,7,8,2,6,1,6,7,2,1], title: 'Castle', bgColor: 0x1a243d, groupNum: 19, size: 0},
@@ -160,7 +160,7 @@ let levels = [
 {level: 125, bombTypes: [6,6,0,9,2,2,7,3,0,2,8,8,8], title: 'Stamps', bgColor: 0xe3e3e3, groupNum: 20, size: 1},
 {level: 126, bombTypes: [7,0,0,7,8,2,1,6, 8,2,3], title: 'Mailbox', bgColor: 0x000000, groupNum: 21, size: 0},
 {level: 127, bombTypes: [0,0,1,6,9,9,3,3], title: 'Dark Side', bgColor: 0x000000, groupNum: 21, size: 0},
-//group 9
+//group 8
 {level: 128, bombTypes: [6,1,1,7,7,9,6,2,0,0,8,8], title: 'Fellowship I', bgColor: 0x77b692, groupNum: 21, size: 0},
 {level: 129, bombTypes: [2,2,3,1,1,2,2,2,8,0], title: 'Fellowship II', bgColor: 0x77b692, groupNum: 21, size: 0},
 {level: 130, bombTypes: [0,7,3,3,1,2,2], title: 'Burger and Fries', bgColor: 0xe6efc2, groupNum: 21, size: 0},
@@ -177,4 +177,21 @@ let levels = [
 {level: 141, bombTypes: [6,6,2,1,1,2,7], title: 'WHEN PIGS FLY', bgColor: 0x78d0dd, groupNum: 23, size: 0},
 {level: 142, bombTypes: [0,6,1,2,3,2,1,2,9], title: 'SMALL CHOPPER', bgColor: 0x78d0dd, groupNum: 23, size: 0},
 {level: 143, bombTypes: [1,6,7,7,2,3,3,0,0,1,2,6,8], title: 'FIREPLACE', bgColor: 0xdedede, groupNum: 23, size: 0},
+//group 9
+{level: 144, bombTypes: [7,6,2,2,2,6,0,3,3,2], title: 'CAR', bgColor: 0x333f70, groupNum: 24, size: 1},
+{level: 145, bombTypes: [7,7,2,2,2,1,1,6,3,2,6,2,0,0], title: 'VERTIGO', bgColor: 0xfd7d34, groupNum: 24, size: 0},
+{level: 146, bombTypes: [7,7,2,2,2,1,1,6,3,2,6,2,0,0], title: 'KILL BILL', bgColor: 0xfce66f, groupNum: 24, size: 0},
+{level: 147, bombTypes: [6,7,2,2,9,1,1,6,3,2,6,2,0,0], title: 'KYLO', bgColor: 0x1f1434, groupNum: 24, size: 0},
+{level: 148, bombTypes: [2,7,2,3,2,9,1,1,6,3,0,0], title: 'XBOX', bgColor: 0xededed, groupNum: 24, size: 0},
+{level: 149, bombTypes: [2,9,7,2,3,2,9,1,1,6,3,0,0], title: 'DESK PHONE', bgColor: 0xababab, groupNum: 24, size: 0},
+{level: 150, bombTypes: [1,1,6,0,0,2,2,0], title: 'STING', bgColor: 0x000000, groupNum: 24, size: 0},
+{level: 151, bombTypes: [0,1,2,1,6,0,0,2,7,6,2,0], title: 'SWISS ARMY', bgColor: 0xbbb73e, groupNum: 24, size: 0},
+{level: 152, bombTypes: [0,1,2,1,6,0,0,2,7,6,2,0], title: 'ROCKET', bgColor: 0x362d43, groupNum: 24, size: 0},
+{level: 153, bombTypes: [7,0,7,2,6,1,3,1,0,0,8,2,8], title: 'CAUTION', bgColor: 0x000000, groupNum: 24, size: 0},
+{level: 154, bombTypes: [6,6,6,1,0,0,2,7,2,1,6,6,7,7,2,2,3,8], title: 'ICONS', bgColor: 0x000000, groupNum: 24, size: 0},
+{level: 155, bombTypes: [2,2,7,2,1,6,0,1,2,3,2,7,7,8,0,0], title: 'DEAD DUCK', bgColor: 0x91c1f8, groupNum: 24, size: 0},
+{level: 156, bombTypes: [3,3,7,1,2,1,2,6,6,2,0,8,7], title: 'FLAG POLE', bgColor: 0xc4e0f8, groupNum: 24, size: 0},
+{level: 157, bombTypes: [7,7,2,2,6,1,1,3,2,2,6,0,0,0,1], title: 'MONARCH', bgColor: 0x57985f, groupNum: 24, size: 0},
+{level: 158, bombTypes: [7,7,6,6,6,6,2,1,2,1,7,8,8,2,2,2,2,0], title: 'LANDSCAPE', bgColor: 0xbfe9f2, groupNum: 24, size: 0},
+{level: 156, bombTypes: [3,7,2,6,6,2,1,2,1,7,8,8,2,2,0], title: 'BIG CHOPPER', bgColor: 0x78d0dd, groupNum: 24, size: 1},
 ];
