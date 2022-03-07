@@ -84,6 +84,7 @@ this.load.audio('explode_sound', 'assets/audio/sfx_exp_shortest_hard5.wav');
       frameHeight: 6
     });
     this.load.image("cl", "assets/corner-left.png");
+    this.load.image("test", "assets/sprites/testload3.png");
     this.load.image("particle", "assets/sprites/particle.png");
     //this.load.image("hero", "assets/hero.png");
    // this.load.image("platform", "assets/platform.png");

@@ -58,7 +58,8 @@ class playGame extends Phaser.Scene {
     this.currentBombNum = 0;
 
     this.cameras.main.setBackgroundColor(levels[onLevel].bgColor);
-
+    //this.cameras.main.setBackgroundColor(15468809);
+    
     var particles = this.add.particles("particle");
 
     // trail emitter configuration
@@ -221,7 +222,7 @@ class playGame extends Phaser.Scene {
     this.setUpHeroBomb();
     this.setUpLevel();
     this.setUpBombs();
-
+   
 
     this.input.on("pointerdown", this.startAiming, this);
     this.input.on("pointerdown", this.startTap, this)
@@ -258,7 +259,9 @@ class playGame extends Phaser.Scene {
     this.hero.bombType = levels[onLevel].bombTypes[this.currentBombNum - 1];
   }
   setUpLevel() {
-    this.nextShape();
+   // 
+   this.loadImage();
+   this.nextShape();
     this.applyShape();
 
   }
@@ -845,7 +848,7 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
           for (var x = 0; x < gameOptions.cols; x++) {
             if (circle.contains(grid[y][x].x, grid[y][x].y)) {
               if (grid[y][x].value != 28) {
-                grid[y][x].setFrame(8);
+                grid[y][x].setAlpha(0);
                 grid[y][x].value = 8;
               }
             }
@@ -927,7 +930,7 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
   floodFill(row, col) {
     if (grid[row][col].value == this.hitValue) {
       grid[row][col].value = 8;
-      grid[row][col].setFrame(8);
+      grid[row][col].setAlpha(0);
       this.floodFill(row + 1, col);
       this.floodFill(row - 1, col);
       this.floodFill(row, col + 1);
@@ -1209,15 +1212,43 @@ var count = this.magazine.length;
     });
     timeline.play();
   }
+  loadImage(){
+    var src = this.textures.get('test').getSourceImage();
+    var canvas = this.textures.createCanvas('map', src.width, src.height).draw(0, 0, src);
+    var pixel = new Phaser.Display.Color();
+this.shape = []
+    for (var y = 0; y < src.height; y++)
+    {
+      var tempS = []
+        for (var x = 0; x < src.width; x++)
+        {
+            canvas.getPixel(x, y, pixel);
 
+            if (pixel.a > 0)
+            {
+                //this.add.rectangle(x * this.blockSize, gameOptions.offSetY + y * this.blockSize, this.blockSize, this.blockSize, pixel.color);
+                //console.log(pixel.color)
+                tempS.push(pixel.color)
+            } else {
+              tempS.push(0)
+            }
+        }
+        this.shape.push(tempS)
+    }
+    console.log(this.shape)
+    currentShape.row = 1;
+    currentShape.col = Math.floor(grid[0].length / 2) - Math.ceil(this.shape[0].length / 2);
+    currentShape.shape = this.shape
+    canvas.destroy();
+  }
 
   nextShape() {
     this.shapeCount = 0;
-    currentShape.shape = shapes[onLevel];
+    //currentShape.shape = shapes[onLevel];
     // console.log('shape length' + currentShape.shape.length)
     for (var row = 0; row < currentShape.shape.length; row++) {
       for (var col = 0; col < currentShape.shape[row].length; col++) {
-        if (currentShape.shape[row][col] != 8) { //currentShape.shape[row][col] != 28
+        if (currentShape.shape[row][col] != 0) { //currentShape.shape[row][col] != 28
           this.shapeCount++;
         }
 
@@ -1238,19 +1269,24 @@ var count = this.magazine.length;
     //console.log('shape count' + this.shapeCount)
 
     //console.log(this.shapeCount);
-    currentShape.row = 1;
-    currentShape.col = Math.floor(grid[0].length / 2) - Math.ceil(currentShape.shape[0].length / 2);
+    //currentShape.row = 1;
+   // currentShape.col = Math.floor(grid[0].length / 2) - Math.ceil(currentShape.shape[0].length / 2);
   }
 
   applyShape() {
     for (var row = 0; row < currentShape.shape.length; row++) {
       for (var col = 0; col < currentShape.shape[row].length; col++) {
-        if (currentShape.shape[row][col] != 8) {
-          grid[currentShape.row + row][currentShape.col + col].setFrame(currentShape.shape[row][col]);
+        if (currentShape.shape[row][col] == 0) {
+          grid[currentShape.row + row][currentShape.col + col].setAlpha(0);
+          grid[currentShape.row + row][currentShape.col + col].value = 8;
+        } else {
+          grid[currentShape.row + row][currentShape.col + col].setTint(currentShape.shape[row][col]).setAlpha(1);
+          console.log(currentShape.shape[row][col])
           grid[currentShape.row + row][currentShape.col + col].value = currentShape.shape[row][col];
         }
       }
     }
+    console.log(grid)
   }
   createBoard() {
     grid = [];
@@ -1260,7 +1296,7 @@ var count = this.magazine.length;
     for (var i = 0; i < gameOptions.rows; i++) {
       var col = [];
       for (var j = 0; j < gameOptions.cols; j++) {
-        var block = this.add.image(gameOptions.offSetX + this.blockSize * j + this.blockSize / 2, gameOptions.offSetY + this.blockSize * i + this.blockSize / 2, 'field', 8);
+        var block = this.add.image(gameOptions.offSetX + this.blockSize * j + this.blockSize / 2, gameOptions.offSetY + this.blockSize * i + this.blockSize / 2, 'platform').setAlpha(0);
         block.value = 8;
         block.displayWidth = this.blockSize;
         block.displayHeight = this.blockSize;
