@@ -25,7 +25,7 @@ class titleScreen extends Phaser.Scene {
     var corner = this.add.image(0, gameOptions.offSetY, 'cl').setOrigin(0).setScale(.5);
     
     
-    currentShape.shape = shapes[1];
+    //currentShape.shape = shapes[1];
 //this.createBoard();
 //this.applyShape();
     onGroup = gameSettings.group;

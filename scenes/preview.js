@@ -33,12 +33,13 @@ class preview extends Phaser.Scene {
     this.bg.displayWidth = 725;
     this.bg.displayHeight = 1200;
     
-    currentShape.shape = shapes[onLevel];
+    //currentShape.shape = shapes[onLevel];
     this.gridbg = this.add.image(game.config.width / 2,600,'platform').setOrigin(.5,0).setTint(levels[onLevel].bgColor);
     this.gridbg.displayWidth = bgW;
     this.gridbg.displayHeight = 600;
-this.createBoard();
-this.applyShape();
+    var previewImage = this.add.image(game.config.width / 2, 600, levels[onLevel].key).setOrigin(.5,0).setScale(this.blockSize)
+//this.createBoard();
+//this.applyShape();
    // onGroup = gameSettings.group;
     
     this.levelText = this.add.bitmapText(game.config.width / 2, 320, 'topaz', levels[onLevel].title, 80).setOrigin(.5, .5).setTint(0xd8a603);

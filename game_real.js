@@ -1213,7 +1213,8 @@ var count = this.magazine.length;
     timeline.play();
   }
   loadImage(){
-    var src = this.textures.get('test').getSourceImage();
+    var key = levels[onLevel].key
+    var src = this.textures.get(key).getSourceImage();
     var canvas = this.textures.createCanvas('map', src.width, src.height).draw(0, 0, src);
     var pixel = new Phaser.Display.Color();
 this.shape = []
