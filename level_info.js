@@ -9,6 +9,7 @@ let groups = [
 {group: 7, numLevels: 16, startNum: 112, title: '8 The Basics'},
 {group: 8, numLevels: 16, startNum: 128, title: '9 The Basics'},
 {group: 9, numLevels: 16, startNum: 144, title: '10 The Basics'},
+{group: 10, numLevels: 16, startNum: 160, title: '11 The Basics'},
 
 ];
 //level data
@@ -178,20 +179,47 @@ let levels = [
 {level: 142, bombTypes: [0,6,1,2,3,2,1,2,9], title: 'SMALL CHOPPER', bgColor: 0x78d0dd, groupNum: 23, size: 0, key: "smallchop" },
 {level: 143, bombTypes: [1,6,7,7,2,3,3,0,0,1,2,6,8], title: 'FIREPLACE', bgColor: 0xdedede, groupNum: 23, size: 0, key: "fireplace" },
 //group 9
-{level: 144, bombTypes: [7,6,2,2,2,6,0,3,3,2], title: 'CAR', bgColor: 0x333f70, groupNum: 24, size: 1},
-{level: 145, bombTypes: [7,7,2,2,2,1,1,6,3,2,6,2,0,0], title: 'VERTIGO', bgColor: 0xfd7d34, groupNum: 24, size: 0},
-{level: 146, bombTypes: [7,7,2,2,2,1,1,6,3,2,6,2,0,0], title: 'KILL BILL', bgColor: 0xfce66f, groupNum: 24, size: 0},
-{level: 147, bombTypes: [6,7,2,2,9,1,1,6,3,2,6,2,0,0], title: 'KYLO', bgColor: 0x1f1434, groupNum: 24, size: 0},
-{level: 148, bombTypes: [2,7,2,3,2,9,1,1,6,3,0,0], title: 'XBOX', bgColor: 0xededed, groupNum: 24, size: 0},
-{level: 149, bombTypes: [2,9,7,2,3,2,9,1,1,6,3,0,0], title: 'DESK PHONE', bgColor: 0xababab, groupNum: 24, size: 0},
-{level: 150, bombTypes: [1,1,6,0,0,2,2,0], title: 'STING', bgColor: 0x000000, groupNum: 24, size: 0},
-{level: 151, bombTypes: [0,1,2,1,6,0,0,2,7,6,2,0], title: 'SWISS ARMY', bgColor: 0xbbb73e, groupNum: 24, size: 0},
-{level: 152, bombTypes: [0,1,2,1,6,0,0,2,7,6,2,0], title: 'ROCKET', bgColor: 0x362d43, groupNum: 24, size: 0},
-{level: 153, bombTypes: [7,0,7,2,6,1,3,1,0,0,8,2,8], title: 'CAUTION', bgColor: 0x000000, groupNum: 24, size: 0},
-{level: 154, bombTypes: [6,6,6,1,0,0,2,7,2,1,6,6,7,7,2,2,3,8], title: 'ICONS', bgColor: 0x000000, groupNum: 24, size: 0},
-{level: 155, bombTypes: [2,2,7,2,1,6,0,1,2,3,2,7,7,8,0,0], title: 'DEAD DUCK', bgColor: 0x91c1f8, groupNum: 24, size: 0},
-{level: 156, bombTypes: [3,3,7,1,2,1,2,6,6,2,0,8,7], title: 'FLAG POLE', bgColor: 0xc4e0f8, groupNum: 24, size: 0},
-{level: 157, bombTypes: [7,7,2,2,6,1,1,3,2,2,6,0,0,0,1], title: 'MONARCH', bgColor: 0x57985f, groupNum: 24, size: 0},
-{level: 158, bombTypes: [7,7,6,6,6,6,2,1,2,1,7,8,8,2,2,2,2,0], title: 'LANDSCAPE', bgColor: 0xbfe9f2, groupNum: 24, size: 0},
-{level: 156, bombTypes: [3,7,2,6,6,2,1,2,1,7,8,8,2,2,0], title: 'BIG CHOPPER', bgColor: 0x78d0dd, groupNum: 24, size: 1},
+{level: 144, bombTypes: [7,6,2,2,2,6,0,3,3,2], title: 'CAR', bgColor: 0x333f70, groupNum: 24, size: 1, key: "car" },
+{level: 145, bombTypes: [7,7,2,2,2,1,1,6,3,2,6,2,0,0], title: 'VERTIGO', bgColor: 0xfd7d34, groupNum: 24, size: 0, key: "vertigo" },
+{level: 146, bombTypes: [7,7,2,2,2,1,1,6,3,2,6,2,0,0], title: 'KILL BILL', bgColor: 0xfce66f, groupNum: 24, size: 0, key: "bill" },
+{level: 147, bombTypes: [6,7,2,2,9,1,1,6,3,2,6,2,0,0], title: 'KYLO', bgColor: 0x1f1434, groupNum: 24, size: 0, key: "kylo" },
+{level: 148, bombTypes: [2,7,2,3,2,9,1,1,6,3,0,0], title: 'XBOX', bgColor: 0xededed, groupNum: 24, size: 0, key: "xbox" },
+{level: 149, bombTypes: [2,9,7,2,3,2,9,1,1,6,3,0,0], title: 'DESK PHONE', bgColor: 0xababab, groupNum: 24, size: 0, key: "deskphone" },
+{level: 150, bombTypes: [1,1,6,0,0,2,2,0], title: 'STING', bgColor: 0x000000, groupNum: 24, size: 0, key: "sting" },
+{level: 151, bombTypes: [0,1,2,1,6,0,0,2,7,6,2,0], title: 'SWISS ARMY', bgColor: 0xbbb73e, groupNum: 24, size: 0, key: "swissarmy" },
+{level: 152, bombTypes: [0,1,2,1,6,0,0,2,7,6,2,0], title: 'ROCKET', bgColor: 0x362d43, groupNum: 24, size: 0, key: "rocket" },
+{level: 153, bombTypes: [7,0,7,2,6,1,3,1,0,0,8,2,8], title: 'CAUTION', bgColor: 0x000000, groupNum: 24, size: 0, key: "caution" },
+{level: 154, bombTypes: [6,6,6,1,0,0,2,7,2,1,6,6,7,7,2,2,3,8], title: 'ICONS', bgColor: 0x000000, groupNum: 24, size: 0, key: "iconsc" },
+{level: 155, bombTypes: [2,2,7,2,1,6,0,1,2,3,2,7,7,8,0,0], title: 'DEAD DUCK', bgColor: 0x91c1f8, groupNum: 24, size: 0, key: "duck" },
+{level: 156, bombTypes: [3,3,7,1,2,1,2,6,6,2,0,8,7], title: 'FLAG POLE', bgColor: 0xc4e0f8, groupNum: 24, size: 0, key: "flagpole" },
+{level: 157, bombTypes: [7,7,2,2,6,1,1,3,2,2,6,0,0,0,1], title: 'MONARCH', bgColor: 0x57985f, groupNum: 24, size: 0, key: "monarch" },
+{level: 158, bombTypes: [7,7,6,6,6,6,2,1,2,1,7,8,8,2,2,2,2,0], title: 'LANDSCAPE', bgColor: 0xbfe9f2, groupNum: 24, size: 0, key: "landscape" },
+{level: 159, bombTypes: [3,7,2,6,6,2,1,2,1,7,8,8,2,2,0], title: 'BIG CHOPPER', bgColor: 0x78d0dd, groupNum: 24, size: 1, key: "bigchopper" },
+//group 10
+{level: 160, bombTypes: [6,2,1,2,0,3,7,8,7], title: 'MARIO HEAD', bgColor: 0x333f70, groupNum: 24, size: 0, key: "marioh" },
+{level: 161, bombTypes: [3,3,3,3,2,8,0,2,6,0,0], title: 'TFA', bgColor: 0x424242, groupNum: 24, size: 0, key: "tfaicons" },
+{level: 162, bombTypes: [2,2,1,2,2,1,6,3,8,8,8], title: 'ART', bgColor: 0xededed, groupNum: 24, size: 0, key: "art" },
+{level: 163, bombTypes: [6,7,6,7,2,2,6,9,8,9,0,0,2], title: 'ATARI 2600', bgColor: 0x825727, groupNum: 24, size: 0, key: "2600" },
+{level: 164, bombTypes: [2,2,2,0,0,0,1,0,8], title: 'JETS', bgColor: 0x78d0dd, groupNum: 24, size: 0, key: "jets" },
+{level: 165, bombTypes: [1,1,2,0,0,0,0,3,0,2,8], title: 'FAN', bgColor: 0xd9e3f7, groupNum: 24, size: 0, key: "fan" },
+{level: 166, bombTypes: [2,1,3,2,1,3,0,6,7], title: 'CAVS', bgColor: 0x205592, groupNum: 24, size: 0, key: "cavs" },
+{level: 167, bombTypes: [6,6,7,7,1,1,0,2,2,7,0,0,0], title: 'BADGE', bgColor: 0xc4e0f8, groupNum: 24, size: 0, key: "badge" },
+{level: 168, bombTypes: [2,2,0,0,0,9,1,2,0,0,0], title: 'MAPLE LEAF', bgColor: 0x9d6d06, groupNum: 24, size: 0, key: "maple" },
+{level: 169, bombTypes: [6,6,7,7,1,1,0,0,0,0], title: 'BUILDING', bgColor: 0x000000, groupNum: 24, size: 0, key: "build" },
+{level: 170, bombTypes: [7,2,2,6,1,1,1,0,0,0,0], title: 'CAMPFIRE', bgColor: 0x000000, groupNum: 24, size: 0, key: "campfire" },
+{level: 171, bombTypes: [6,7,6,7,6,1,2,2,9,0,8,8,2,3,3], title: 'R2-D2 2', bgColor: 0x91c1f8, groupNum: 24, size: 0, key: "r2d22" },
+{level: 172, bombTypes: [2,2,2,2,1,7,7,3,3,0,0], title: 'PORTRAIT 2', bgColor: 0xc4e0f8, groupNum: 24, size: 0, key: "port2" },
+{level: 173, bombTypes: [2,2,0,0,7,2,0,8,0,8,0,8], title: 'ACE OF SPADES', bgColor: 0x57985f, groupNum: 24, size: 0, key: "ace" },
+{level: 174, bombTypes: [0,0,0,0,7,2,1,8,8,8,8], title: 'ET', bgColor: 0xbfe9f2, groupNum: 24, size: 0, key: "etbody" },
+{level: 175, bombTypes: [1,1,2,0,0,0,0,3,0,2,8], title: 'SONIC', bgColor: 0x78d0dd, groupNum: 24, size: 1, key: "sonic" },
 ];
+/*
+0 normal
+1 drop
+2 spread
+3 guide
+6 expand
+7 large
+8 small
+9 color drain
+*/

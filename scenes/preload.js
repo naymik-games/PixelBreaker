@@ -114,7 +114,7 @@ class preloadGame extends Phaser.Scene {
     this.load.image("flower", "assets/levels/01-013.png");
     this.load.image("moon", "assets/levels/01-014.png");
     this.load.image("good", "assets/levels/01-015.png");
-    this.load.image("potion", "assets/levels/potion01-016.png");
+    this.load.image("potion", "assets/levels/01-016.png");
     //group 2
     this.load.image("groot", "assets/levels/02-001.png");
     this.load.image("random", "assets/levels/02-002.png");
@@ -251,6 +251,41 @@ class preloadGame extends Phaser.Scene {
     this.load.image("pigsfly", "assets/levels/09-014.png");
     this.load.image("smallchop", "assets/levels/09-015.png");
     this.load.image("fireplace", "assets/levels/09-016.png");
+    //group 10
+    this.load.image("car", "assets/levels/10-001.png");
+    this.load.image("vertigo", "assets/levels/10-002.png");
+    this.load.image("bill", "assets/levels/10-003.png");
+    this.load.image("kylo", "assets/levels/10-004.png");
+    this.load.image("xbox", "assets/levels/10-005.png");
+    this.load.image("deskphone", "assets/levels/10-006.png");
+    this.load.image("sting", "assets/levels/10-007.png");
+    this.load.image("swissarmy", "assets/levels/10-008.png");
+    this.load.image("rocket", "assets/levels/10-009.png");
+    this.load.image("caution", "assets/levels/10-010.png");
+    this.load.image("iconsc", "assets/levels/10-011.png");
+    this.load.image("duck", "assets/levels/10-012.png");
+    this.load.image("flagpole", "assets/levels/10-013.png");
+    this.load.image("monarch", "assets/levels/10-014.png");
+    this.load.image("landscape", "assets/levels/10-015.png");
+    this.load.image("bigchopper", "assets/levels/10-016.png");
+     //group 11
+     this.load.image("marioh", "assets/levels/11-001.png");
+     this.load.image("tfaicons", "assets/levels/11-002.png");
+     this.load.image("art", "assets/levels/11-003.png");
+     this.load.image("2600", "assets/levels/11-004.png");
+     this.load.image("jets", "assets/levels/11-005.png");
+     this.load.image("fan", "assets/levels/11-006.png");
+     this.load.image("cavs", "assets/levels/11-007.png");
+     this.load.image("badge", "assets/levels/11-008.png");
+     this.load.image("maple", "assets/levels/11-009.png");
+     this.load.image("build", "assets/levels/11-010.png");
+     this.load.image("campfire", "assets/levels/11-011.png");
+     this.load.image("r2d22", "assets/levels/11-012.png");
+     this.load.image("port2", "assets/levels/11-013.png");
+     this.load.image("ace", "assets/levels/11-014.png");
+     this.load.image("etbody", "assets/levels/11-015.png");
+     this.load.image("sonic", "assets/levels/11-016.png");
+ 
   }
   create() {
     this.scene.start("titleScreen");

@@ -1,6 +1,6 @@
 let game;
 
-window.onload = function() {
+window.onload = function () {
   let gameConfig = {
     type: Phaser.AUTO,
     backgroundColor: 0x000000,
@@ -61,7 +61,7 @@ class playGame extends Phaser.Scene {
 
     this.cameras.main.setBackgroundColor(levels[onLevel].bgColor);
     //this.cameras.main.setBackgroundColor(15468809);
-    
+
     var particles = this.add.particles("particle");
 
     // trail emitter configuration
@@ -124,41 +124,41 @@ class playGame extends Phaser.Scene {
 
     //text fields
     this.setUpText();
-    
+
     //ready modal set up
     this.readyBG = this.add.image(1200, 1100, 'platform').setAlpha(.7).setTint(0x000000);
     this.readyBG.displayHeight = 125;
     this.readyBG.displayWidth = 300;
     this.readyText = this.add.bitmapText(1200, 1100, 'topaz', 'READY?', 70).setOrigin(.5, .5).setTint(0xd8a603);
-    
+
     //aiming brackets
     this.bracketts = this.add.bitmapText(game.config.width / 2, 1340, 'topaz', '[  ]', 70).setOrigin(.5).setTint(0x333333);
-   
+
     //buttons
     //detonation button
     this.detonatePressed = false;
-    if(detonaterOn){
+    if (detonaterOn) {
       this.detonateIcon = this.add.image(825, 1425, 'icons', 6).setDepth(2).setOrigin(1).setScale(1.5).setInteractive();
-      this.detonateIcon.on('pointerdown', function() {
-    
-      //this.hero.body.setVelocity(0, 0);
-      if (soundOn) {
-        this.sound.play('detonate_sound');
-      }
+      this.detonateIcon.on('pointerdown', function () {
 
-      var tween = this.tweens.add({
-        targets: this.detonateIcon,
-        alpha: .3,
-        scale: .7,
-        duration: 100,
-        yoyo: true
-      })
-      if (!this.detonatePressed) {
-        this.doStop();
-        this.detonatePressed = true;
-      }
+        //this.hero.body.setVelocity(0, 0);
+        if (soundOn) {
+          this.sound.play('detonate_sound');
+        }
 
-    }, this);
+        var tween = this.tweens.add({
+          targets: this.detonateIcon,
+          alpha: .3,
+          scale: .7,
+          duration: 100,
+          yoyo: true
+        })
+        if (!this.detonatePressed) {
+          this.doStop();
+          this.detonatePressed = true;
+        }
+
+      }, this);
 
     }
 
@@ -174,7 +174,7 @@ class playGame extends Phaser.Scene {
 
     });
 
-    Phaser.Actions.Call(this.bombGroup.getChildren(), function(bomb) {
+    Phaser.Actions.Call(this.bombGroup.getChildren(), function (bomb) {
       bomb.placed = false;
     }, this);
     //bomb set up
@@ -203,17 +203,17 @@ class playGame extends Phaser.Scene {
     this.coinExists = false;
     this.bombCollected = false;
 
-   // this.tapText = this.add.bitmapText(600, 1240, 'topaz', '#left ' + this.numberOfBombs, 40).setOrigin(0, .5).setTint(0xd8a603).setAlpha(1);
+    // this.tapText = this.add.bitmapText(600, 1240, 'topaz', '#left ' + this.numberOfBombs, 40).setOrigin(0, .5).setTint(0xd8a603).setAlpha(1);
 
     this.stateText = this.add.bitmapText(600, 1070, 'topaz', '#bombs ' + this.numberOfBombs, 40).setOrigin(0, .5).setTint(0xd8a603).setAlpha(0);
 
 
     var UI = this.scene.get('UI');
-    UI.events.on('switch', function(data) {
+    UI.events.on('switch', function (data) {
       console.log('switch recieved')
       this.switchBombs();
     }, this);
-    UI.events.on('buy', function(data) {
+    UI.events.on('buy', function (data) {
       console.log('buy recieved ' + data)
       this.addBoughtBomb(data);
     }, this);
@@ -224,7 +224,7 @@ class playGame extends Phaser.Scene {
     this.setUpHeroBomb();
     this.setUpLevel();
     this.setUpBombs();
-   
+
 
     this.input.on("pointerdown", this.startAiming, this);
     this.input.on("pointerdown", this.startTap, this)
@@ -261,9 +261,9 @@ class playGame extends Phaser.Scene {
     this.hero.bombType = levels[onLevel].bombTypes[this.currentBombNum - 1];
   }
   setUpLevel() {
-   // 
-   this.loadImage();
-   this.nextShape();
+    // 
+    this.loadImage();
+    this.nextShape();
     this.applyShape();
 
   }
@@ -274,7 +274,7 @@ class playGame extends Phaser.Scene {
     this.bombsFired = 0;
     var timeline = this.tweens.createTimeline({
       onCompleteScope: this,
-      onComplete: function() {
+      onComplete: function () {
         this.setUpTurn();
       }
     });
@@ -322,7 +322,7 @@ class playGame extends Phaser.Scene {
     // this.bracketts.setTint(0xd8a603);
 
   }
-nextBomb() {
+  nextBomb() {
     this.tapCount = 0;
     this.bombHit = true;
     this.detonatePressed = false;
@@ -338,9 +338,9 @@ nextBomb() {
       y: 1350,
       duration: 800,
       onCompleteScope: this,
-      onComplete: function() {
+      onComplete: function () {
         var tempVal = this.magazine[0].bombType;
-       
+
         this.magazine[0].setAlpha(0);
         this.magazine[0].setPosition(50, 1400);
         //	this.hero = this.magazine[0];
@@ -370,7 +370,7 @@ nextBomb() {
     })
 
   }
-  
+
 
 
 
@@ -394,10 +394,10 @@ nextBomb() {
         if (soundOn) {
           this.sound.play('tap_sound');
         }
-		var angle = Math.atan2(this.hero.body.velocity.y, this.hero.body.velocity.x);
-	
-		var deg = this.radToDeg(angle)
-		console.log('angle ' + angle)
+        var angle = Math.atan2(this.hero.body.velocity.y, this.hero.body.velocity.x);
+
+        var deg = this.radToDeg(angle)
+        console.log('angle ' + angle)
         for (var i = 0; i < 3; i++) {
           var b = this.bombGroup.get(0, 0, 'hero', 5, true);
           b.displayWidth = this.fixedBlockSize * 3;
@@ -413,28 +413,28 @@ nextBomb() {
             //b.body.setVelocity(-200,-this.speed);
             // let angleOfFire = Phaser.Math.DegToRad((this.trajectory.angle - 50) - 90);
             //b.body.setVelocity(this.speed * Math.cos(angleOfFire), this.speed * Math.sin(angleOfFire));
-			var newRad = this.degToRad(deg - 15);
-			console.log('new angle ' + newRad)
-			var newVect = this.vectorFromRad(newRad);
-			console.log(newVect)
-			b.body.setVelocity((this.ballSpeed * 1.5) * newVect.x, this.ballSpeed * newVect.y)
-           // b.body.setVelocity(this.hero.body.velocity.x - 250, this.hero.body.velocity.y - 200);
+            var newRad = this.degToRad(deg - 15);
+            console.log('new angle ' + newRad)
+            var newVect = this.vectorFromRad(newRad);
+            console.log(newVect)
+            b.body.setVelocity((this.ballSpeed * 1.5) * newVect.x, this.ballSpeed * newVect.y)
+            // b.body.setVelocity(this.hero.body.velocity.x - 250, this.hero.body.velocity.y - 200);
           } else if (i == 1) {
             //b.body.setVelocity(0, -this.speed);
             // let angleOfFire = Phaser.Math.DegToRad((this.trajectory.angle + 50) - 90);
             //b.body.setVelocity((this.speed * 1) * Math.cos(angleOfFire), (this.speed * 1.1) * Math.sin(angleOfFire));
-			var newRad = this.degToRad(deg - 2);
-			var newVect = this.vectorFromRad(newRad);
-			b.body.setVelocity((this.ballSpeed * 1.5) * newVect.x, this.ballSpeed * newVect.y)
+            var newRad = this.degToRad(deg - 2);
+            var newVect = this.vectorFromRad(newRad);
+            b.body.setVelocity((this.ballSpeed * 1.5) * newVect.x, this.ballSpeed * newVect.y)
 
             //b.body.setVelocity(this.hero.body.velocity.x + 250, this.hero.body.velocity.y - 200);
           } else {
             //b.body.setVelocity(200,-this.speed);
             // let angleOfFire = Phaser.Math.DegToRad((this.trajectory.angle + 60) - 90);
             // b.body.setVelocity(this.speed * Math.cos(angleOfFire), this.speed * Math.sin(angleOfFire));
-			var newRad = this.degToRad(deg + 15);
-			var newVect = this.vectorFromRad(newRad);
-			b.body.setVelocity((this.ballSpeed * 1.5) * newVect.x, this.ballSpeed * newVect.y)
+            var newRad = this.degToRad(deg + 15);
+            var newVect = this.vectorFromRad(newRad);
+            b.body.setVelocity((this.ballSpeed * 1.5) * newVect.x, this.ballSpeed * newVect.y)
 
             //b.body.setVelocity(this.hero.body.velocity.x + 0, this.hero.body.velocity.y - 400);
           }
@@ -451,19 +451,19 @@ nextBomb() {
       }
     }
   }
-degToRad(degrees) {
-  return degrees * (Math.PI / 180);
-}
+  degToRad(degrees) {
+    return degrees * (Math.PI / 180);
+  }
 
-radToDeg(rad) {
-  return rad / (Math.PI / 180);
-}
-vectorFromRad(radian) {
-     let x = Math.cos(radian);
-     let y = Math.sin(radian);
-     
-      return {x: x, y: y}
-    
+  radToDeg(rad) {
+    return rad / (Math.PI / 180);
+  }
+  vectorFromRad(radian) {
+    let x = Math.cos(radian);
+    let y = Math.sin(radian);
+
+    return { x: x, y: y }
+
   }
   tapUp(e) {
     if (this.gameState == BALLS_ARE_RUNNING) {
@@ -476,28 +476,28 @@ vectorFromRad(radian) {
         var swipe = new Phaser.Geom.Point(e.upX - e.downX, e.upY - e.downY);
         var swipeMagnitude = Phaser.Geom.Point.GetMagnitude(swipe);
         var swipeNormal = new Phaser.Geom.Point(swipe.x / swipeMagnitude, swipe.y / swipeMagnitude);
-    
-    
-      this.angleOfFire = Phaser.Math.Angle.Between(e.downX, e.downY, e.x, e.y);
-this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this.angleOfFire));
 
-      /*  if (swipeMagnitude > 20 && swipeTime < 1000 && (Math.abs(swipeNormal.y) > 0.8 || Math.abs(swipeNormal.x) > 0.8)) {
-          if (swipeNormal.x > 0.8) { //right
-            this.hero.body.velocity.x += 100;
-          }
-          if (swipeNormal.x < -0.8) { //left
-            this.hero.body.velocity.x -= 100;
-          }
-          if (swipeNormal.y > 0.8) { //down
-            //this.rotateShape();
-            this.hero.body.velocity.y += 100;
-            //	this.moveDown();
-          }
-          if (swipeNormal.y < -0.8) { //up
-            this.hero.body.velocity.y -= 100;
 
-          }
-        }*/
+        this.angleOfFire = Phaser.Math.Angle.Between(e.downX, e.downY, e.x, e.y);
+        this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this.angleOfFire));
+
+        /*  if (swipeMagnitude > 20 && swipeTime < 1000 && (Math.abs(swipeNormal.y) > 0.8 || Math.abs(swipeNormal.x) > 0.8)) {
+            if (swipeNormal.x > 0.8) { //right
+              this.hero.body.velocity.x += 100;
+            }
+            if (swipeNormal.x < -0.8) { //left
+              this.hero.body.velocity.x -= 100;
+            }
+            if (swipeNormal.y > 0.8) { //down
+              //this.rotateShape();
+              this.hero.body.velocity.y += 100;
+              //	this.moveDown();
+            }
+            if (swipeNormal.y < -0.8) { //up
+              this.hero.body.velocity.y -= 100;
+  
+            }
+          }*/
       }
     }
   }
@@ -701,7 +701,7 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
       }
     }
   }
-  
+
   checkPos() {
     if (grid[this.heroRow][this.heroCol].value != 8) {
       if (this.hero.bombType != 1 || this.hero.bombType != 3) {
@@ -718,7 +718,7 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
   checkPosAux() {
     if (this.hero.bombType == 2) {
 
-      Phaser.Actions.Call(this.bombGroup.getChildren(), function(bomb) {
+      Phaser.Actions.Call(this.bombGroup.getChildren(), function (bomb) {
         if (bomb.placed) {
           var bRow = Math.floor((bomb.y - gameOptions.offSetY) / this.blockSize);
           var bCol = Math.floor(bomb.x / this.blockSize);
@@ -734,15 +734,15 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
 
   }
 
-  
-  
-  
+
+
+
   doSpread() {
     //this.tapCount = 4;
 
     var timeline = this.tweens.createTimeline({
       onCompleteScope: this,
-      onComplete: function() {
+      onComplete: function () {
         this.finishStop();
       }
     });
@@ -805,7 +805,7 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
 
   }
   finishStop() {
-    Phaser.Actions.Call(this.bombGroup.getChildren(), function(bomb) {
+    Phaser.Actions.Call(this.bombGroup.getChildren(), function (bomb) {
       if (bomb.placed) {
         this.doDamage(bomb);
       }
@@ -813,7 +813,7 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
     this.doDamage(this.hero);
     this.gameState = PREPARING_FOR_NEXT_MOVE;
   }
-  
+
 
   doDamage(object) {
     if (this.hero.bombType == 7) {
@@ -836,7 +836,7 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
     var j = this.heroCol
     this.gameSpeed = this.time.addEvent({
       delay: 500,
-      callback: function() {
+      callback: function () {
         object.setAlpha(0);
         object.placed = false;
         if (this.bombGroup.contains(object)) {
@@ -904,13 +904,13 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
             yoyo: true,
             duration: 1500,
             onCompleteScope: this,
-            onComplete: function() {
-				
+            onComplete: function () {
+
               messText.destroy();
             }
           })
-         this.endTurn();
-          
+          this.endTurn();
+
         }
         graphics.clear();
       },
@@ -952,12 +952,12 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
       y: -100,
       duration: 500,
       onCompleteScope: this,
-      onComplete: function() {
+      onComplete: function () {
         this.coin.destroy();
       }
     })
   }
-  
+
 
 
 
@@ -971,20 +971,20 @@ this.hero.body.setVelocity(100 * Math.cos(this.angleOfFire), 100 * Math.sin(this
     }
 
 
-var count = this.magazine.length;
-        var xpos = 425 - count * 80;
-        levels[onLevel].bombTypes.push(num);
-        var icon = this.add.image(-80, 1580, 'hero', num);
-        icon.displayWidth = this.fixedBlockSize * 3;
-        icon.displayHeight = this.fixedBlockSize * 3;
-        icon.bombType = num;
-        var tween = this.tweens.add({
-          targets: icon,
-          x: xpos,
-          duration: 400
-        })
-        this.magazine.push(icon);
-        this.numberOfBombs++;
+    var count = this.magazine.length;
+    var xpos = 425 - count * 80;
+    levels[onLevel].bombTypes.push(num);
+    var icon = this.add.image(-80, 1580, 'hero', num);
+    icon.displayWidth = this.fixedBlockSize * 3;
+    icon.displayHeight = this.fixedBlockSize * 3;
+    icon.bombType = num;
+    var tween = this.tweens.add({
+      targets: icon,
+      x: xpos,
+      duration: 400
+    })
+    this.magazine.push(icon);
+    this.numberOfBombs++;
 
 
     var tweenmove = this.tweens.add({
@@ -994,10 +994,10 @@ var count = this.magazine.length;
       //offset: '-=400',
       duration: 800,
       onCompleteScope: this,
-      onComplete: function() {
+      onComplete: function () {
         //this.setUpTurn();
         boughtBomb.destroy();
-        
+
       }
     });
     //timeline.play();
@@ -1011,23 +1011,23 @@ var count = this.magazine.length;
     this.bombTotalText.setText(this.numberOfBombs)
 
     levels[onLevel].bombTypes.push(num);
-	var boughtBomb = this.add.image(xpos, ypos, 'hero', num);
+    var boughtBomb = this.add.image(xpos, ypos, 'hero', num);
     boughtBomb.displayWidth = this.fixedBlockSize * 3;
     boughtBomb.displayHeight = this.fixedBlockSize * 3;
-	 var count = this.magazine.length;
-        var xpos = 425 - count * 80;
+    var count = this.magazine.length;
+    var xpos = 425 - count * 80;
 
-        var icon = this.add.image(-80, 1580, 'hero', num);
-        icon.displayWidth = this.fixedBlockSize * 3;
-        icon.displayHeight = this.fixedBlockSize * 3;
-        icon.bombType = num;
-        var tween = this.tweens.add({
-          targets: icon,
-          x: xpos,
-          duration: 400
-        })
-        this.magazine.push(icon);
-    
+    var icon = this.add.image(-80, 1580, 'hero', num);
+    icon.displayWidth = this.fixedBlockSize * 3;
+    icon.displayHeight = this.fixedBlockSize * 3;
+    icon.bombType = num;
+    var tween = this.tweens.add({
+      targets: icon,
+      x: xpos,
+      duration: 400
+    })
+    this.magazine.push(icon);
+
 
     if (soundOn) {
       this.sound.play('extra_sound');
@@ -1040,10 +1040,10 @@ var count = this.magazine.length;
       //offset: '-=400',
       duration: 800,
       onCompleteScope: this,
-      onComplete: function() {
+      onComplete: function () {
         //this.setUpTurn();
         boughtBomb.destroy();
-       
+
 
       }
     });
@@ -1087,7 +1087,7 @@ var count = this.magazine.length;
     if (per == 0) {
       this.gameSpeed = this.time.addEvent({
         delay: 1500,
-        callback: function() {
+        callback: function () {
           this.scene.launch("endLevel", { percent: Math.round(per) });
           this.scene.pause();
           this.scene.pause('UI')
@@ -1104,10 +1104,10 @@ var count = this.magazine.length;
 
       this.gameSpeed = this.time.addEvent({
         delay: 1500,
-        callback: function() {
+        callback: function () {
           this.scene.launch("endLevel", { percent: Math.round(per) });
           this.scene.pause();
-		  this.scene.pause('UI')
+          this.scene.pause('UI')
         },
         callbackScope: this,
       });
@@ -1127,7 +1127,7 @@ var count = this.magazine.length;
         y: 1580,
         yoyo: true,
         duration: 500,
-        onYoyo: function() {
+        onYoyo: function () {
           this.hero.bombType = tempValMag;
           this.hero.setFrame(tempValMag)
           this.magazine[0].bombType = tempValHero;
@@ -1143,7 +1143,7 @@ var count = this.magazine.length;
     }
 
   }
-  
+
   addCoin() {
     var rand = Phaser.Math.Between(1, 100);
     if (rand > 50 && !this.coinExists) {
@@ -1162,7 +1162,7 @@ var count = this.magazine.length;
       });
       this.time.addEvent({
         delay: 15000,
-        callback: function() {
+        callback: function () {
           this.coin.destroy();
           this.coinExists = false;
 
@@ -1192,7 +1192,7 @@ var count = this.magazine.length;
   slideBombs() {
     var timeline = this.tweens.createTimeline({
       onCompleteScope: this,
-      onComplete: function() {
+      onComplete: function () {
         //this.setUpTurn();
       }
     });
@@ -1214,31 +1214,32 @@ var count = this.magazine.length;
     });
     timeline.play();
   }
-  loadImage(){
+  loadImage() {
     var key = levels[onLevel].key
     var src = this.textures.get(key).getSourceImage();
     var canvas = this.textures.createCanvas('map', src.width, src.height).draw(0, 0, src);
     var pixel = new Phaser.Display.Color();
-this.shape = []
-    for (var y = 0; y < src.height; y++)
-    {
+    //var pixel = {}
+    this.shape = []
+    for (var y = 0; y < src.height; y++) {
       var tempS = []
-        for (var x = 0; x < src.width; x++)
-        {
-            canvas.getPixel(x, y, pixel);
-
-            if (pixel.a > 0)
-            {
-                //this.add.rectangle(x * this.blockSize, gameOptions.offSetY + y * this.blockSize, this.blockSize, this.blockSize, pixel.color);
-                //console.log(pixel.color)
-                tempS.push(pixel.color)
-            } else {
-              tempS.push(0)
-            }
+      for (var x = 0; x < src.width; x++) {
+        canvas.getPixel(x, y, pixel);
+        
+        //console.log(canvas.getIndex(x, y))
+        if (pixel.a > 0) {
+          //this.add.rectangle(x * this.blockSize, gameOptions.offSetY + y * this.blockSize, this.blockSize, this.blockSize, pixel.color);
+          //console.log(pixel.color)
+          tempS.push(pixel.color)
+          //console.log(pixel)
+        } else {
+          tempS.push(0)
+          
         }
-        this.shape.push(tempS)
+      }
+      this.shape.push(tempS)
     }
-    console.log(this.shape)
+   console.log(this.shape)
     currentShape.row = 1;
     currentShape.col = Math.floor(grid[0].length / 2) - Math.ceil(this.shape[0].length / 2);
     currentShape.shape = this.shape
@@ -1267,13 +1268,13 @@ this.shape = []
 
       }
     }
-   // console.log('shape count' + this.shapeCountTemp)
+    // console.log('shape count' + this.shapeCountTemp)
     this.shapeCount -= this.shapeCountTemp;
     //console.log('shape count' + this.shapeCount)
 
     //console.log(this.shapeCount);
     //currentShape.row = 1;
-   // currentShape.col = Math.floor(grid[0].length / 2) - Math.ceil(currentShape.shape[0].length / 2);
+    // currentShape.col = Math.floor(grid[0].length / 2) - Math.ceil(currentShape.shape[0].length / 2);
   }
 
   applyShape() {
@@ -1283,6 +1284,7 @@ this.shape = []
           grid[currentShape.row + row][currentShape.col + col].setAlpha(0);
           grid[currentShape.row + row][currentShape.col + col].value = 8;
         } else {
+          grid[currentShape.row + row][currentShape.col + col].setAlpha(1)
           grid[currentShape.row + row][currentShape.col + col].setTint(currentShape.shape[row][col]).setAlpha(1);
           console.log(currentShape.shape[row][col])
           grid[currentShape.row + row][currentShape.col + col].value = currentShape.shape[row][col];
@@ -1313,8 +1315,8 @@ this.shape = []
     //console.log('i is x' + grid[0].length);
 
   }
-  
-  setUpText(){
+
+  setUpText() {
     var leveltemp = onLevel + 1;
     this.titleText = this.add.bitmapText(50, this.topPanel.displayHeight / 2, 'topaz', '#' + leveltemp + ' ' + levels[onLevel].title, 60).setOrigin(0, .5).setTint(0xd8a603).setDepth(2);
     this.perText = this.add.bitmapText(690, 200, 'topaz', '100%', 70).setOrigin(0, .5).setTint(0xd8a603);
