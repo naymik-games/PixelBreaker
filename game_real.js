@@ -17,7 +17,9 @@ window.onload = function() {
 
       }
     },
-    pixelArt: true,
+    render: {
+      pixelArt: true
+    },
 
     scene: [preloadGame, titleScreen, settings, selectGroup, selectGame, preview, playGame, UI, endLevel, levelEditor, levelEditorUI]
   }
