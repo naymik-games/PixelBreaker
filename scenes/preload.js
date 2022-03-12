@@ -282,7 +282,7 @@ class preloadGame extends Phaser.Scene {
      this.load.image("campfire", "assets/levels/11-011.png");
      this.load.image("r2d22", "assets/levels/11-012.png");
      this.load.image("port2", "assets/levels/11-013.png");
-     this.load.image("ace", "assets/levels/11-014.png");
+     this.load.image("aces", "assets/levels/11-014.png");
      this.load.image("etbody", "assets/levels/11-015.png");
      this.load.image("sonic", "assets/levels/11-016.png");
  

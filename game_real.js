@@ -1068,7 +1068,7 @@ class playGame extends Phaser.Scene {
         }
       }
     }
-    console.log('shape count' + this.newShapeCount)
+    //console.log('shape count' + this.newShapeCount)
     this.newShapeCountTemp = 0;
     for (var i = 0; i < gameOptions.rows; i++) {
       for (var j = 0; j < gameOptions.cols; j++) {
@@ -1077,7 +1077,7 @@ class playGame extends Phaser.Scene {
         }
       }
     }
-    console.log('shape count' + this.newShapeCountTemp)
+    //console.log('shape count' + this.newShapeCountTemp)
     this.newShapeCount -= this.newShapeCountTemp;
     var per = this.newShapeCount / this.shapeCount * 100;
     this.perText.setText(Math.round(per) + '%');
@@ -1226,20 +1226,20 @@ class playGame extends Phaser.Scene {
       for (var x = 0; x < src.width; x++) {
         canvas.getPixel(x, y, pixel);
         
-        //console.log(canvas.getIndex(x, y))
+       // console.log(x + ',' + y + ', ' + pixel.color + " a:" + pixel.a)
         if (pixel.a > 0) {
           //this.add.rectangle(x * this.blockSize, gameOptions.offSetY + y * this.blockSize, this.blockSize, this.blockSize, pixel.color);
           //console.log(pixel.color)
           tempS.push(pixel.color)
           //console.log(pixel)
         } else {
-          tempS.push(0)
+          tempS.push(-1)
           
         }
       }
       this.shape.push(tempS)
     }
-   console.log(this.shape)
+   //console.log(this.shape)
     currentShape.row = 1;
     currentShape.col = Math.floor(grid[0].length / 2) - Math.ceil(this.shape[0].length / 2);
     currentShape.shape = this.shape
@@ -1252,7 +1252,7 @@ class playGame extends Phaser.Scene {
     // console.log('shape length' + currentShape.shape.length)
     for (var row = 0; row < currentShape.shape.length; row++) {
       for (var col = 0; col < currentShape.shape[row].length; col++) {
-        if (currentShape.shape[row][col] != 0) { //currentShape.shape[row][col] != 28
+        if (currentShape.shape[row][col] != -1) { //currentShape.shape[row][col] != 28
           this.shapeCount++;
         }
 
@@ -1280,18 +1280,18 @@ class playGame extends Phaser.Scene {
   applyShape() {
     for (var row = 0; row < currentShape.shape.length; row++) {
       for (var col = 0; col < currentShape.shape[row].length; col++) {
-        if (currentShape.shape[row][col] == 0) {
+        if (currentShape.shape[row][col] == -1) {
           grid[currentShape.row + row][currentShape.col + col].setAlpha(0);
           grid[currentShape.row + row][currentShape.col + col].value = 8;
         } else {
           grid[currentShape.row + row][currentShape.col + col].setAlpha(1)
           grid[currentShape.row + row][currentShape.col + col].setTint(currentShape.shape[row][col]).setAlpha(1);
-          console.log(currentShape.shape[row][col])
+          //console.log(currentShape.shape[row][col])
           grid[currentShape.row + row][currentShape.col + col].value = currentShape.shape[row][col];
         }
       }
     }
-    console.log(grid)
+    //console.log(grid)
   }
   createBoard() {
     grid = [];

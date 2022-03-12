@@ -82,7 +82,7 @@ class selectGame extends Phaser.Scene {
 
 
     for (var i = 0; i < groups[groupNum].numLevels; i++) {
-      console.log('level');
+      //console.log('level');
       if (i < 8) {
         var xpos = 50
         var ypos = (game.config.height / 2 - 525) + (i * 140);

@@ -26,7 +26,7 @@ let groups = [
 
 let levels = [
 //group 0
-{ level: 0, bombTypes: [0,1,2,3,6,7,8,9], title: 'BURST', bgColor: 0x000000, groupNum: 0, size: 0, key: "burst" }, 
+{ level: 0, bombTypes: [0,1,2,3,6,7,8,9], title: 'BURST', bgColor: 0xab0303, groupNum: 0, size: 0, key: "burst" }, 
 { level: 1, bombTypes: [1, 2,], title: 'EASY STAR', bgColor: 0x000000, groupNum: 0, size: 0, key: "star" }, 
 { level: 2, bombTypes: [2, 2, 2, 8, 8,8,1,1], title: 'SWORD', bgColor: 0x000000, groupNum: 0, size: 0, key: "sword" }, 
 { level: 3, bombTypes: [0, 6, 6, 6, 0, 3, 0], title: 'PM GHOST', bgColor: 0x000000, groupNum: 0, size: 0, key: "ghost" },
@@ -209,7 +209,7 @@ let levels = [
 {level: 170, bombTypes: [7,2,2,6,1,1,1,0,0,0,0], title: 'CAMPFIRE', bgColor: 0x000000, groupNum: 24, size: 0, key: "campfire" },
 {level: 171, bombTypes: [6,7,6,7,6,1,2,2,9,0,8,8,2,3,3], title: 'R2-D2 2', bgColor: 0x91c1f8, groupNum: 24, size: 0, key: "r2d22" },
 {level: 172, bombTypes: [2,2,2,2,1,7,7,3,3,0,0], title: 'PORTRAIT 2', bgColor: 0xc4e0f8, groupNum: 24, size: 0, key: "port2" },
-{level: 173, bombTypes: [2,2,0,0,7,2,0,8,0,8,0,8], title: 'ACE OF SPADES', bgColor: 0x57985f, groupNum: 24, size: 0, key: "ace" },
+{level: 173, bombTypes: [2,2,0,0,7,2,0,8,0,8,0,8], title: 'ACE OF SPADES', bgColor: 0x57985f, groupNum: 24, size: 0, key: "aces" },
 {level: 174, bombTypes: [0,0,0,0,7,2,1,8,8,8,8], title: 'ET', bgColor: 0xbfe9f2, groupNum: 24, size: 0, key: "etbody" },
 {level: 175, bombTypes: [1,1,2,0,0,0,0,3,0,2,8], title: 'SONIC', bgColor: 0x78d0dd, groupNum: 24, size: 1, key: "sonic" },
 ];
