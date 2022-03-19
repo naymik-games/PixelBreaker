@@ -24,7 +24,7 @@ class selectGame extends Phaser.Scene {
 
     this.showGroup(this.startGroup);
     //this.backText = this.add.bitmapText(game.config.width / 2, 1530, 'topaz', '< back', 60).setOrigin(.5, .5).setTint(0xd8a603).setInteractive();
-    this.backText = this.add.image(game.config.width / 2, game.config.height - 50, 'icons', 12).setInteractive();
+    this.backText = this.add.image(game.config.width / 2, game.config.height - 50, 'icons', 2).setInteractive();
 
 
     this.backText.level = -2;
@@ -108,15 +108,15 @@ class selectGame extends Phaser.Scene {
 
       } else if (gameSettings.levelStatus[levelNum] == -1) {
         status = 'Not Played';
-      } else if (gameSettings.levelStatus[levelNum] == 0) {
-        status = '* * *';
-      } else if (gameSettings.levelStatus[levelNum] > 0 && gameSettings.levelStatus[levelNum] < 11) {
-        status = '* *';
-      } else if (gameSettings.levelStatus[levelNum] > 10 && gameSettings.levelStatus[levelNum] < 26) {
+      } else if (gameSettings.levelStatus[levelNum] == 100) {
+        status = '* * * - ' + gameSettings.levelStatus[levelNum] + '%';
+      } else if (gameSettings.levelStatus[levelNum] > 89 && gameSettings.levelStatus[levelNum] < 100) {
+        status = '* * - ' + gameSettings.levelStatus[levelNum] + '%';
+      } else if (gameSettings.levelStatus[levelNum] > 74 && gameSettings.levelStatus[levelNum] < 90) {
         // statusText = this.add.bitmapText(game.config.width / 2, ypos + 60, 'topaz', '*', 50).setOrigin(.5).setTint(0xd8a603);
-        status = '*';
-      } else if (gameSettings.levelStatus[levelNum] > 25) {
-        status = '--';
+        status = '* - ' + gameSettings.levelStatus[levelNum] + '%';
+      } else if (gameSettings.levelStatus[levelNum] < 75) {
+        status = gameSettings.levelStatus[levelNum] + '%';
       }
 
 

@@ -1080,11 +1080,12 @@ class playGame extends Phaser.Scene {
     //console.log('shape count' + this.newShapeCountTemp)
     this.newShapeCount -= this.newShapeCountTemp;
     var per = this.newShapeCount / this.shapeCount * 100;
+    per = 100 - per
     this.perText.setText(Math.round(per) + '%');
-    if (per < 26) {
+    if (per > 74) {
       this.damageEmit(this.perText.x, this.perText.y);
     }
-    if (per == 0) {
+    if (per == 100) {
       this.gameSpeed = this.time.addEvent({
         delay: 1500,
         callback: function () {
@@ -1319,7 +1320,7 @@ class playGame extends Phaser.Scene {
   setUpText() {
     var leveltemp = onLevel + 1;
     this.titleText = this.add.bitmapText(50, this.topPanel.displayHeight / 2, 'topaz', '#' + leveltemp + ' ' + levels[onLevel].title, 60).setOrigin(0, .5).setTint(0xd8a603).setDepth(2);
-    this.perText = this.add.bitmapText(690, 200, 'topaz', '100%', 70).setOrigin(0, .5).setTint(0xd8a603);
+    this.perText = this.add.bitmapText(690, 200, 'topaz', '0%', 70).setOrigin(0, .5).setTint(0xd8a603);
     this.forceText = this.add.bitmapText(70, game.config.height - (this.emptySpace / 2 + 50), 'topaz', '0', 50).setOrigin(0, 1).setTint(0xd8a603);
     this.coinText = this.add.bitmapText(825, 280, 'topaz', '0', 50).setOrigin(1, .5).setTint(0xd8a603);
     this.coinIcon = this.add.image(725, 290, 'icons', 9).setScale(.5);

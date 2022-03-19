@@ -22,7 +22,8 @@ class selectGroup extends Phaser.Scene {
           if(count == this.startGroup){
             pack.setTint(0x00ff00)
           }
-          var groupTitle = this.add.bitmapText(xPos, yPos - 130, 'topaz',groups[count].title, 40).setOrigin(.5,0).setTint(0x333333).setMaxWidth(265);
+          var groupTitle = this.add.bitmapText(xPos - 137.5, yPos - 130, 'topaz',groups[count].title, 40).setOrigin(0).setTint(0x333333).setMaxWidth(265);
+         this.numText = this.add.bitmapText(xPos, yPos + 25, 'topaz',count + 1, 70).setOrigin(.5).setTint(0x333333).setMaxWidth(265);
           pack.group = count;
           }
           count++
@@ -31,6 +32,7 @@ class selectGroup extends Phaser.Scene {
     }
 
     this.backText = this.add.image(game.config.width / 2, game.config.height - 50, 'icons', 12).setInteractive();
+    
     this.backText.group = -1;
     
 

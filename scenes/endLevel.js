@@ -39,7 +39,7 @@ class endLevel extends Phaser.Scene {
     })
    // this.endBG.displayHeight = 900;
    // this.endBG.displayWidth = game.config.width -200;
-    if(this.per < 26){
+    if(this.per > 74){
       if(gameSettings.levelStatus[onLevel + 1] == -2){
         gameSettings.levelStatus[onLevel + 1] = -1;
       }
@@ -47,7 +47,7 @@ class endLevel extends Phaser.Scene {
     console.log(coinCount);
     gameSettings.coins += coinCount;
     
-    if(this.per < gameSettings.levelStatus[onLevel]){
+    if(this.per > gameSettings.levelStatus[onLevel]){
       gameSettings.levelStatus[onLevel] = this.per;
     } else if(gameSettings.levelStatus[onLevel] == -1){
       gameSettings.levelStatus[onLevel] = this.per
@@ -55,13 +55,13 @@ class endLevel extends Phaser.Scene {
     
     
     coinCount = 0;
-    if (this.per == 0) {
+    if (this.per == 100) {
       var star = '* * *';
       var mess = 'AWESOME!'
-    } else if (this.per < 11) {
+    } else if (this.per >= 90 && this.per < 100) {
       var star = '* *';
       var mess = 'DOING GREAT!'
-    } else if(this.per < 26){
+    } else if(this.per > 74 && this.per < 90){
       var mess = ' JUST MADE IT!'
       var star = '*';
     } else {
@@ -100,6 +100,7 @@ class endLevel extends Phaser.Scene {
 	this.selectIcon.on('pointerdown', function() {
     this.scene.stop('PlayGame')
       this.scene.start("selectGame");
+      this.scene.stop('UI')
       //this.scene.stop();
     }, this);
 

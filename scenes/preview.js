@@ -60,13 +60,13 @@ class preview extends Phaser.Scene {
     } else if (gameSettings.levelStatus[onLevel] == -1) {
       var statusText = 'Never Played';
     
-    } else if (gameSettings.levelStatus[onLevel] == 0) {
+    } else if (gameSettings.levelStatus[onLevel] == 100) {
       var statusText = '* * *';
-    } else if (gameSettings.levelStatus[onLevel] > 0 && gameSettings.levelStatus[onLevel] < 11) {
+    } else if (gameSettings.levelStatus[onLevel] < 100 && gameSettings.levelStatus[onLevel] > 89) {
       var statusText = '* *';
-    } else if (gameSettings.levelStatus[onLevel] > 10 && gameSettings.levelStatus[onLevel] < 26) {
+    } else if (gameSettings.levelStatus[onLevel] < 89 && gameSettings.levelStatus[onLevel] > 74) {
       var statusText = '*';
-    } else if (gameSettings.levelStatus[onLevel] > 25) {
+    } else if (gameSettings.levelStatus[onLevel] < 75) {
       var statusText = 'Keep Trying';
     }
 
