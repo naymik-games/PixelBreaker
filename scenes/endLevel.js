@@ -12,7 +12,7 @@ class endLevel extends Phaser.Scene {
 
   }
   create() {
-    
+    console.log(this.per)
   /*  gameSettings = JSON.parse(localStorage.getItem('breaker'));
     if (gameSettings === null || gameSettings.length <= 0) {
       localStorage.setItem('breaker', JSON.stringify(defaultValues));
@@ -68,8 +68,10 @@ class endLevel extends Phaser.Scene {
       var mess = 'KEEP TRYING!'
       var star = '--';
     }
-    this.message = this.add.bitmapText(1200, 500, 'topaz', mess, 80).setOrigin(.5).setTint(0xd8a603).setInteractive();
-    this.starText = this.add.bitmapText(1200, 675, 'topaz', star, 100).setOrigin(.5).setTint(0xd8a603).setInteractive();
+    this.message = this.add.bitmapText(1200, 475, 'topaz', mess, 80).setOrigin(.5).setTint(0xd8a603).setInteractive();
+    this.perText = this.add.bitmapText(1200, 600, 'topaz', this.per + '%', 100).setOrigin(.5).setTint(0xd8a603).setInteractive();
+
+    this.starText = this.add.bitmapText(1200, 775, 'topaz', star, 100).setOrigin(.5).setTint(0xd8a603).setInteractive();
 	
 	
 	this.coinIcon = this.add.image(game.config.width + 300, 1227, 'icons',9).setScale(.7);
@@ -78,7 +80,7 @@ class endLevel extends Phaser.Scene {
 	
 	
 	
-	this.playAgainIcon = this.add.image(1200, 900, 'icons',1).setInteractive();
+	this.playAgainIcon = this.add.image(1200, 975, 'icons',1).setInteractive();
     //this.playAgain = this.add.bitmapText(1200, 900, 'topaz', 'PLAY AGAIN', 70).setOrigin(.5).setTint(0xd8a603).setInteractive();
     this.playAgainIcon.on('pointerdown', function() {
 
@@ -111,15 +113,23 @@ class endLevel extends Phaser.Scene {
     timeline.add({
       targets: this.message,
       x: 425,
-      delay: 300,
+      delay: 0,
       //offset: '-=400',
+      duration: 400
+    });
+    timeline.add({
+      targets: this.perText,
+      x: 425,
+      delay: 0,
+      offset: '-=400',
+      
       duration: 400
     });
     timeline.add({
       targets: this.starText,
       x: 425,
       delay: 0,
-      //offset: '-=400',
+      offset: '-=400',
       
       duration: 400
     });
@@ -127,22 +137,22 @@ class endLevel extends Phaser.Scene {
     timeline.add({
       targets: [this.selectIcon,this.nextLevelIcon,this.playAgainIcon],
       x: 425,
-      delay: 0,
-      //offset: '-=400',
+      delay: 400,
+      offset: '-=400',
       duration: 400
     });
     timeline.add({
       targets: this.coinIcon,
       x: 575,
       delay: 0,
-      //offset: '-=400',
+      offset: '-=400',
       duration: 800
     });
     timeline.add({
       targets: this.coinTotalText,
       x: 650,
-      delay: 0,
-      //offset: '-=400',
+      delay: 200,
+      offset: '-=400',
       duration: 400
     });
     timeline.play();
