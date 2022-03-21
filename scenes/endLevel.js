@@ -69,7 +69,7 @@ class endLevel extends Phaser.Scene {
       var star = '--';
     }
     this.message = this.add.bitmapText(1200, 475, 'topaz', mess, 80).setOrigin(.5).setTint(0xd8a603).setInteractive();
-    this.perText = this.add.bitmapText(1200, 600, 'topaz', this.per + '%', 100).setOrigin(.5).setTint(0xd8a603).setInteractive();
+    this.perText = this.add.bitmapText(1200, 600, 'topaz', this.per + '%', 100).setOrigin(.5).setTint(0xfafafa).setInteractive();
 
     this.starText = this.add.bitmapText(1200, 775, 'topaz', star, 100).setOrigin(.5).setTint(0xd8a603).setInteractive();
 	

@@ -535,7 +535,7 @@ class playGame extends Phaser.Scene {
         var p = points[i];
         this.graphicsAim.fillCircle(p.x, p.y, 7)
       }
-      this.graphicsAim.fillCircle(this.line.x2, this.line.y2, 37.5)
+      this.graphicsAim.fillCircle(this.line.x2, this.line.y2, 35)
       this.legalAngleOfFire = true
       this.angleOfFire = Phaser.Geom.Line.Angle(this.line)
       this.ballSpeed = (Phaser.Geom.Line.Length(this.line)) * 2
@@ -613,6 +613,7 @@ class playGame extends Phaser.Scene {
       this.hero.body.setVelocity(this.ballSpeed * Math.cos(this.angleOfFire), this.ballSpeed * Math.sin(this.angleOfFire));
       this.heroSpin.resume();
       this.bombsFired++;
+      this.graphicsAim.clear()
       this.gameState = BALLS_ARE_RUNNING;
       if (soundOn) {
         this.sound.play('launch_sound');

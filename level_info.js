@@ -37,7 +37,7 @@ let levels = [
 {level: 8, bombTypes: [0,0, 1, 1, 0,8,8], title: 'G-DUDE', bgColor: 0x000000, groupNum: 1, size: 0, key: "gdude"},
 {level: 9, bombTypes: [1,1, 0, 1,8,8,1,1,1, 0,8,8], title: 'R2-D2', bgColor: 0x000000, groupNum: 1, size: 0, key: "r2"},
 {level: 10, bombTypes: [0,1, 1, 0,0, 1,1,8,8,8], title: 'TNT', bgColor: 0x000000, groupNum: 1, size: 0, key: "tnt"},
-{level: 11, bombTypes: [1,8,1,8, 1, 0, 0,1,8,1,8,1,8,8,8], title: 'AT PEACE', bgColor: 0x000000, groupNum: 1, size: 0, key: "peace"},
+{level: 11, bombTypes: [1,8,1,8, 1, 0, 0,1,8,1,8,1,8,8,8], title: 'AT PEACE', bgColor: 0x222222, groupNum: 1, size: 0, key: "peace"},
 {level: 12, bombTypes: [2,0,2,0,1,8,1,0,2,2,8,1,2,8], title: 'FLOWER POWER', bgColor: 0x000000, groupNum: 2, size: 0, key: "flower"},
 {level: 13, bombTypes: [2,2,2,0,0,1,1,1,0,2,8,8], title: 'OVER THE MOON', bgColor: 0x000000, groupNum: 2, size: 0, key: "moon"},
 {level: 14, bombTypes: [1,2,1,2,0,0,1,2,8], title: 'GOOD BOY', bgColor: 0x000000, groupNum: 2, size: 0, key: "good"},
